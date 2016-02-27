@@ -4,5 +4,7 @@
 <h3>Products</h3>
 <input [ngFormControl]="searchInput" />
 
-<sort-btn (sort)="emitOnSort($event)"></sort-btn>
+<sort-btn (sort)="emitSortPrice($event)" [name]="'price'"></sort-btn>
+<sort-btn (sort)="emitSortName($event)" [name]="'name'"></sort-btn>
+
 <products-list [products]="products"></products-list>

@@ -6,6 +6,7 @@ import { SortFactory } from '../models/sort.factory';
     selector: 'sort-btn',
     //To create own event we need to mark it as `output`, @Output decorator is also available
     outputs: ['sort'],
+    inputs: ['name']
 })
 @View({
     templateUrl: 'views/sortBtn.html',
@@ -16,6 +17,7 @@ export class SortBtnComponent {
     //This property needs to be EventEmitter instance
     public sort = new EventEmitter();
     public sortFactory = new SortFactory();
+    public name: string;
 
     public onClickSort () {
         this.sort.emit(this.sortFactory.next);

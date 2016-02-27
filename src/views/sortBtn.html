@@ -1,5 +1,5 @@
 <button (click)="onClickSort()">
-    Sort by price
+    Sort {{ name }} by
     <span *ngIf="sortFactory.current < 0">Asc</span>
     <span *ngIf="sortFactory.current > 0">Desc</span>
     <span *ngIf="sortFactory.current === 0">=</span>
