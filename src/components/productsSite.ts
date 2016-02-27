@@ -2,7 +2,9 @@ import { Component, View } from 'angular2/core';
 import { Control } from 'angular2/common'
 
 import { ProductsListComponent } from "./productsList";
+import { ProductInterface } from "../models/product.interface";
 import { Product } from '../models/product.entity';
+import { SortBtnComponent } from './sortBtn';
 
 @Component({
     selector: 'products-site',
@@ -10,10 +12,11 @@ import { Product } from '../models/product.entity';
 @View({
     templateUrl: 'views/productsSite.view.html',
     //Any directive we want to use in our component should appear in this array
-    directives: [ProductsListComponent]
+    directives: [ProductsListComponent, SortBtnComponent]
 })
 export class ProductsSiteComponent {
     public searchInput = new Control();
+    public sortMode: number;
     public _products = [
         new Product(require('./products.json')[0]),
         new Product(require('./products.json')[1]),
@@ -21,7 +24,18 @@ export class ProductsSiteComponent {
     ];
 
     get products () {
-        return this._products.filter((product) => {
+        let tempProduct: Array<ProductInterface>;
+
+        tempProduct = this._products.sort((a, b) => {
+            if (this.sortMode < 0) {
+                return a.price - b.price;
+            } else if (this.sortMode > 0) {
+                return b.price - a.price;
+            }
+            return 0;
+        });
+
+        return tempProduct.filter((product) => {
             let filterVal:string = this.searchInput.value || '';
             let regexp:any;
             let booleans: any;
@@ -47,5 +61,9 @@ export class ProductsSiteComponent {
         return this._products.filter((product) => {
             return product.id === 1;
         });
+    }
+
+    emitOnSort (sortMode: number) {
+        this.sortMode = sortMode;
     }
 }

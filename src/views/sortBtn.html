@@ -1,0 +1,6 @@
+<button (click)="onClickSort()">
+    Sort by price
+    <span *ngIf="sortFactory.current < 0">Asc</span>
+    <span *ngIf="sortFactory.current > 0">Desc</span>
+    <span *ngIf="sortFactory.current === 0">=</span>
+</button>
