@@ -1,5 +1,5 @@
 <li class="product">
     <input type="checkbox" [checked]="item.done" />
-    {{ item.name }}
+    {{ item.name }}, price {{ item.price }}
     <span class="product-tag" *ngFor="#tag of item.tags">{{ tag }}</span>
 </li>

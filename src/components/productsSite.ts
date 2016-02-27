@@ -24,20 +24,22 @@ export class ProductsSiteComponent {
         return this._products.filter((product) => {
             let filterVal:string = this.searchInput.value || '';
             let regexp:any;
+            let booleans: any;
 
             regexp = new RegExp(filterVal, 'ig');
-
-            let booleans = {
+            booleans = {
                 name: false,
-                tags: false
+                tags: false,
+                price: false
             };
 
             booleans.name = product.name.search(regexp) !== -1;
             booleans.tags = product.tags.filter(tag => {
                 return tag.search(regexp) !== -1;
             }).length > 0;
+            booleans.price = product.price.toString().search(regexp) !== -1;
 
-            return booleans.name || booleans.tags;
+            return booleans.name || booleans.tags || booleans.price;
         });
     }
 
