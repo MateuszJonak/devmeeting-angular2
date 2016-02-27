@@ -2,42 +2,19 @@ import {Component, View} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 
 import { ProductComponent } from "./product";
-import { ProductsSpecialComponent } from "./productsSpecial";
-import { Product } from '../models/product.entity';
+import { ProductInterface } from '../models/product.interface';
 
 @Component({
     selector: 'products-list',
+    //To receive data we need to mark property as an `input`
+    inputs: ['products']
 })
 @View({
     templateUrl: 'views/productsList.html',
     //Any directive we want to use in our component should appear in this array
-    directives: [COMMON_DIRECTIVES, ProductComponent, ProductsSpecialComponent]
+    directives: [COMMON_DIRECTIVES, ProductComponent]
 })
 export class ProductsListComponent {
-    public products = [
-        new Product({
-            id: 1,
-            name: 'item1',
-            price: 20,
-            done: false
-        }),
-        new Product({
-            id: 2,
-            name: 'item2',
-            price: 40,
-            done: false
-        }),
-        new Product({
-            id: 3,
-            name: 'item3',
-            price: 60,
-            done: false
-        })
-    ];
-
-    get specialProducts () {
-        return this.products.filter((product) => {
-            return product.id === 1;
-        });
-    }
+    // We can also use @Input() annotation instead of config in @Component()
+    public products: Array<ProductInterface>;
 }

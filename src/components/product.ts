@@ -9,7 +9,9 @@ import { ProductInterface } from '../models/product.interface';
     inputs: ['item'],
 })
 @View({
-    templateUrl: 'views/product.html'
+    templateUrl: 'views/product.html',
+    directives: [COMMON_DIRECTIVES],
+    styles: [require('./product.styl')]
 })
 export class ProductComponent {
     // We can also use @Input() annotation instead of config in @Component()

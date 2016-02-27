@@ -1,5 +1,3 @@
-<strong>Special products:</strong>
-<products-special [productsSpecial]="specialProducts"></products-special>
-
-<strong>Normal products:</strong>
-<product *ngFor="#product of products" [item]="product"></product>
+<ul>
+    <product *ngFor="#product of products" [item]="product"></product>
+</ul>

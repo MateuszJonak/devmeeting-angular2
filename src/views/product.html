@@ -1,4 +1,5 @@
-<div>
+<li class="product">
     <input type="checkbox" [checked]="item.done" />
     {{ item.name }}
-</div>
+    <span class="product-tag" *ngFor="#tag of item.tags">{{ tag }}</span>
+</li>

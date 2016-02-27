@@ -3,4 +3,5 @@ export interface ProductInterface {
     name: string;
     price: number;
     done: boolean;
+    tags: Array <string>;
 }
