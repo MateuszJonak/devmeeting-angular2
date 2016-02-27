@@ -13,14 +13,26 @@ import { Product } from '../entity/product.entity';
 })
 export class ListComponent {
     public products = [
-        new Product({name: 'item1', price: 20}),
-        new Product({name: 'item2', price: 40}),
-        new Product({name: 'item3', price: 60})
+        new Product({
+            id: 1,
+            name: 'item1',
+            price: 20
+        }),
+        new Product({
+            id: 2,
+            name: 'item2',
+            price: 40
+        }),
+        new Product({
+            id: 3,
+            name: 'item3',
+            price: 60
+        })
     ];
 
     get specialProducts () {
         return this.products.filter((product) => {
-            return product.name === 'item1';
+            return product.id === 1;
         });
     }
 }
