@@ -2,4 +2,4 @@
 <div *ngFor="#product of specialProducts">{{ product.name }}</div>
 
 <strong>Normal products:</strong>
-<div *ngFor="#product of products">{{ product.name }}</div>
+<product *ngFor="#product of products" [item]="product"></product>

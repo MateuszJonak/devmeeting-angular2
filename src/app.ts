@@ -2,7 +2,7 @@ import {Component} from 'angular2/core';
 import {RouteConfig, RouterOutlet} from 'angular2/router';
 
 import {TestComponent} from './components/test';
-import {ListComponent} from './components/list';
+import {ProductsListComponent} from './components/productsList';
 
 @Component({
     selector: 'app',
@@ -11,6 +11,6 @@ import {ListComponent} from './components/list';
 })
 @RouteConfig([
     { path: '/', component: TestComponent },
-    { path: '/list', component: ListComponent }
+    { path: '/list', component: ProductsListComponent }
 ])
 export class App {}
