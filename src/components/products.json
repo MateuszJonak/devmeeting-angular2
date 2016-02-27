@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "item1",
+    "price": 20,
+    "done": false,
+    "tags": [
+      "toys"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "item2",
+    "price": 40,
+    "done": false,
+    "tags": [
+      "tools"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "item3",
+    "price": 60,
+    "done": false,
+    "tags": [
+      "toys", "tools"
+    ]
+  }
+]
