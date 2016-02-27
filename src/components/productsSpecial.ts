@@ -2,7 +2,7 @@ import {Component, View} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 
 import { ProductComponent } from "./product";
-import { ProductInterface } from '../entity/product.interface';
+import { ProductInterface } from '../models/product.interface';
 
 @Component({
     selector: 'products-special',

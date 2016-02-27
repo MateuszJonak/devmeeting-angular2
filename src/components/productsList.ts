@@ -3,7 +3,7 @@ import {COMMON_DIRECTIVES} from 'angular2/common';
 
 import { ProductComponent } from "./product";
 import { ProductsSpecialComponent } from "./productsSpecial";
-import { Product } from '../entity/product.entity';
+import { Product } from '../models/product.entity';
 
 @Component({
     selector: 'products-list',
