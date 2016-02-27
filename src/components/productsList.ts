@@ -2,15 +2,16 @@ import {Component, View} from 'angular2/core';
 import {COMMON_DIRECTIVES} from 'angular2/common';
 
 import { ProductComponent } from "./product";
+import { ProductsSpecialComponent } from "./productsSpecial";
 import { Product } from '../entity/product.entity';
 
 @Component({
-    selector: 'list',
+    selector: 'products-list',
 })
 @View({
     templateUrl: 'views/productsList.html',
     //Any directive we want to use in our component should appear in this array
-    directives: [COMMON_DIRECTIVES, ProductComponent]
+    directives: [COMMON_DIRECTIVES, ProductComponent, ProductsSpecialComponent]
 })
 export class ProductsListComponent {
     public products = [
